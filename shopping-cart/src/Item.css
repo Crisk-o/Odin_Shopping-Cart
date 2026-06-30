@@ -1,0 +1,30 @@
+.grid-item{
+    width: 100%;
+    align-self: center;
+    border: 1px solid #DCD8CE;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 10px -10px 15px 1px rgba(0, 0, 0, 0.267);
+    padding: 25px;
+    background-color: #F5F2EB;
+}
+button{
+    background-color: #849b92;
+    color: #1c2833;
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.add-item-input {
+    background-color: #B85D36;
+    width: 200px;
+    height: 20px;
+}
+.hidden {
+    visibility: hidden;
+}
+.unhidden {
+    visibility: visible;
+}

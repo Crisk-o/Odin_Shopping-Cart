@@ -1,7 +1,7 @@
-:root {
-  --text: #6b6375;
+ :root {
+  /* --text: #6b6375;
   --text-h: #08060d;
-  --bg: #fff;
+  --bg: #fff; */
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
@@ -48,7 +48,7 @@
   #social .button-icon {
     filter: invert(1) brightness(2);
   }
-}
+} 
 /* Color Palette: Pacific NW
 Primary Accent: Vintage Blue #303D57 (Best for dominant branding, large headings, and footer backgrounds) 
 Secondary Accent: Heritage Brick Red #c00b1e (Use strictly as an accent (e.g., CTAs, hover effects) for maritime pop.)
@@ -57,22 +57,34 @@ Base Neutral: Warm Cream #f9f6f0 (Keeps the site airy and prevents the cool blue
 Tertiary Accent: Sage Driftwood #849b92 (Ideal for subtle backgrounds, quotes, or secondary link states.)
 
 */
-
-
 #root{
-  background-color: #f9f6ff;
+  background-color: #f9f6f0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 header, footer{
   display: flex;
   width: 100vw;
-  /* max-width: 100%; */
-  justify-content: center;
   background-color: #303D57;
-  color: #1c2833;
+  
+}
+nav{
+    font-size: 20px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    text-decoration: none;
+    width: 60%;
+    justify-content: right;
 }
 
 footer{
+  justify-content: center;
+  align-items: center;
+}
+footer > nav {
   justify-content: center;
 }
 
@@ -87,6 +99,7 @@ ul{
 
 body {
   /* width: 1250px; */
+  margin: 0;
   max-width: 100%;
   text-align: center;
   border-inline: 1px solid var(--border);
@@ -96,6 +109,7 @@ body {
   box-sizing: border-box;
   background-color: #f9f6f0;
   color: #1c2833;
+  align-items: center;
 }
 
 h1,
@@ -126,14 +140,37 @@ h2 {
 p {
   margin: 0;
 }
+.logo-container{
+  color: #f9f6f0;
+  letter-spacing: 2.75px;
+  width: 20%;
+  font-size: 24px;
+}
 .hero-img{
-  width: 1024px;
+  width: 1000px;
   height: auto;
+  margin: 0;
+  padding: 5px;
 }
 .content-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.lets-shop-button{
+  width: 150px;
+  max-width: 20%;
+  height: 100px;
+  border-radius: 15px;
+  background-color: #849b92;
+  color: #1c2833;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
 
+a{
+    color: #f9f6f0;
+    text-decoration: none;
+}

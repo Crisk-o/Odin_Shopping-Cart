@@ -1,0 +1,8 @@
+.shop-item-container{
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-self: center;
+    gap: 50px;
+    column-gap: 150px;
+}

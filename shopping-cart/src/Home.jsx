@@ -6,6 +6,9 @@ function Home() {
     return (
         <>
         <header>
+            <div className="logo-container">
+                <h3>Wanderlust</h3>
+            </div>
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>
@@ -16,14 +19,13 @@ function Home() {
         </header>
         <div className='title-container'>
             <h1>Wanderlust</h1>
-            {/* Wanderlust - Outdoor-related gear or backpacking site */}
-            {/* Serendipity - creating storefront for used items. Like DePop w/o the social aspect.*/}
         </div>
 
         <div className='content-container'>
-            <p>Disover into something new.</p>
             <img className="hero-img" src={HeroImage} alt="hero image of traveler in coastal setting"></img>
-            <Link to="shop">Let's Shop</Link>
+            <div className="lets-shop-button">
+                <Link to="shop" delay={1000}>Discover something new.</Link>
+            </div>
         </div>
 
         <footer>
