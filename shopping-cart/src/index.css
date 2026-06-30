@@ -53,15 +53,16 @@
 Primary Accent: Vintage Blue #303D57 (Best for dominant branding, large headings, and footer backgrounds) 
 Secondary Accent: Heritage Brick Red #c00b1e (Use strictly as an accent (e.g., CTAs, hover effects) for maritime pop.)
 Dark Neutral: Ink Black #1c2833 (Ensures high-contrast readability for body copy.)
-Base Neutral: Warm Cream #f9f6f0 (Keeps the site airy and prevents the cool blues from feeling stark.)
+Base Neutral: Warm Cream #f9f6f0 / #F5F2EB (Keeps the site airy and prevents the cool blues from feeling stark.)
+Subtle Neutral: Misty Fog #DCD8CE
 Tertiary Accent: Sage Driftwood #849b92 (Ideal for subtle backgrounds, quotes, or secondary link states.)
 
 */
 #root{
-  background-color: #f9f6f0;
+  background-color: #F5F2EB;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 9px;
 }
 
 header, footer{
@@ -107,7 +108,7 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  background-color: #f9f6f0;
+  background-color: #F5F2EB;
   color: #1c2833;
   align-items: center;
 }
@@ -155,19 +156,23 @@ p {
 .content-container {
   display: flex;
   flex-direction: column;
+  gap: 15px;
   align-items: center;
 }
 .lets-shop-button{
-  width: 150px;
+  width: 300px;
   max-width: 20%;
-  height: 100px;
+  height: 75px;
   border-radius: 15px;
-  background-color: #849b92;
+  background-color: #B85D36;
+  border: 1px solid black;
   color: #1c2833;
   display: flex;
   justify-content: center;
   align-items: center;
-
+}
+.lets-shop-button:hover{
+  outline: 2px solid #E5B254;
 }
 
 a{

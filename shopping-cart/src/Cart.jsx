@@ -1,29 +1,35 @@
 // this will be the cart/checkout page.
 // this will be the shopping page where user adds item to their cart.
 import { Link } from "react-router"
-// import { useState, useEffect } from "react"
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
+import { useState, useEffect } from "react"
 function Cart() {
+    const [cartArray, setCartArray] = useState([""]);
 
     return (
         <>
-        <header>
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="shop">Shop</Link></li>
-                    <li><Link to="cart">My Cart</Link></li>
-                </ul>
-            </nav>
-        </header>
-        <div className='title-container'>
-            <h1>Wanderlust</h1>
-        </div>
-        
-        <div className="cart-container"></div>
-        
-        
-        
-        
+        <Navbar />
+        <body>
+            <div className='title-container'>
+                <h1>Your Cart</h1>
+            </div>
+            
+            <div className="cart-items-container">
+                <div className="cart-item">
+                    <img src={"#"} alt="item image"></img>
+                    <p>Item Title</p>
+                    <p>itemCount</p>
+                </div>
+            </div>
+            <div className="cart-payment-details-container">
+                <p>Subtotal: $total USD</p>
+                <p>Taxes and shipping calculated at checkout</p>
+                <button>Check out</button>
+
+            </div>
+        </body>  
+        <Footer/>
         </>
     )
 }
