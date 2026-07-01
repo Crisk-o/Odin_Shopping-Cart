@@ -11,8 +11,8 @@ export default function Navbar({totalItems}){
                     <li><Link to="/shop">Shop</Link></li>
                     <li>
                         <div>
-                            <div>{}</div>
-                            <Link to="/cart">My Cart<span>{totalItems}</span></Link>
+                            <Link to="/cart">My Cart</Link>
+                            <div className="cart-item-counter">{totalItems}</div>
                         </div>
                     </li>
                 </ul>

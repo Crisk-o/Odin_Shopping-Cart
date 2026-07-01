@@ -1,39 +1,24 @@
-import {useState, useEffect} from "react";
-function Cart_Item({id, quantity, thumbnail, title, price}) {
-    const [itemID, setItemID] = useState(id);
-    const [itemCount, setItemCount] = useState(quantity);
-    const [imageURL, setImageURL] = useState(thumbnail);
-    const [itemTitle, setItemTitle] = useState(title);
-    const [itemPrice, setItemPrice] = useState(price);
-    
-    // useEffect(() => {
-    //     const randIndex = Math.floor(Math.random() * 30) + 1;
-    //     fetch(`https://dummyjson.com/products/${randIndex}`, {
-    //         mode: 'cors'
-    //     })
-    //     .then(response => response.json())
-    //     .then(response => {
-    //         setImageURL(response.thumbnail); 
-    //         setItemTitle(response.title); 
-    //     })
-    //     .catch((error) => console.error(error));
-    // }, []);
-    
+import {useState} from "react";
+
+function Cart_Item({item, itmCount}){
+    const [itemCount, setItemCount] = useState(itmCount);
+
+    const total = item.price * itemCount;
+
     const handleItemCount = (e) => {
-        // eslint-disable-next-line no-unused-vars
-        const {name, value} = e.target;
-        // setItemCount((prevInfo) => ({...prevInfo, [name]: value }) )
-        setItemCount(([value]))
+        const value = Number(e.target.value);
+        setItemCount(value);
     }
+
     return (
         <>
-            <div className="cart-item">
-                <img src={imageURL} alt="item-image"></img>
-                <h4>{itemTitle}</h4>
+            <div data-key={item.id} className="cart-item">
+                <img src={item.thumbnail} alt="item-image"></img>
+                <h4>{item.title}</h4>
                 <div>
-                    <input className={`add-item-input }`} name="itemCount" type="number" onChange={handleItemCount} value={itemCount}></input>
+                    <input className={`add-item-input }`} min="0" max="30" name="itemCount" type="number" onChange={handleItemCount} value={itemCount}></input>
                 </div>
-                <p>{itemPrice * itemCount}</p>
+                <p>{total}</p>
             </div>
         </>
     )

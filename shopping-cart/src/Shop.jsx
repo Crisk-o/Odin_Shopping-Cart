@@ -25,25 +25,7 @@ export default function Shop() {
     if(loading) { 
         return <div>Loading products...</div>
     }
-    // console.log(inventory[0].title);
-    // })
-    // useEffect(() => {
-    //     const randIndex = Math.floor(Math.random() * 30) + 1;
-    //     fetch(`https://dummyjson.com/products/${randIndex}`, {
-    //         mode: 'cors'
-    //     })
-    //     .then(response => response.json())
-    //     .then(response => {
-    //         response.map(item => {
-    //             <Item {{item.id,  }}
-    //         })
-    //         // setImageURL(response.thumbnail); 
-    //         // setItemTitle(response.title); 
-    //         // setItemID(response.id);
-    //         // setItemPrice(response.price);
-    //     })
-    //     .catch((error) => console.error(error));
-    // }, []);
+
 
     return (
         <>
@@ -55,9 +37,11 @@ export default function Shop() {
             {inventory.slice(0,9).map((item => {
                 return (<Item 
                     key={item.id}
-                    title={item.title}
-                    price={item.price}
-                    imgURL={item.thumbnail}
+                    item = {item}
+                    // title={item.title}
+                    // price={item.price}
+                    // imgURL={item.thumbnail}
+                    handleButtonClick={(item, qty) => addToCart(item, qty)}
                 /> 
                 );
             }))}

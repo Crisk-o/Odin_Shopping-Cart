@@ -3,30 +3,30 @@ import {useState} from "react"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 export default function Layout(){
-    const [cart, setCartArray] = useState([]);
+    const [cart, setCart] = useState([]);
     
-    // const addToCart = (product) => {
-    //     setCartArray((prev) => {
-    //         const productExist = prev.find((item) => item.id === product.id);
-    //         if(productExist){
-    //             return prev.map((item) => 
-    //             item.id === product.id ? {...item, itemCount: item.itemCount + 1} : item
-    //         );
-    //     }
-    //     return [...prev, { ...product, itemCount: 1}];
-    //     });
-    // }
-    // const addToCart = (product) => {
-    //     setCartArray((prev) => {
+    const addToCart = (product, itemCount) => {
+        setCart((prev) => {
+            console.log("product id: " + product.id + " count is : " + itemCount)
+            // checks to see if item is already in cart, 
+            // if so increase quantity, else add to cart.
+            const existing = prev.find((item) => item.id === product.id);
+            if(existing){
+                return prev.map((item) =>
+                    item.id === product.id ? { ...item, quantity: item.quantity + itemCount } : item
+                );
+            }
+            return [...prev, { ...product, quantity: itemCount }];
+            });
+    };
 
-    //     })
-    // }
-    const totalItems = cart.reduce(())
+
+    const totalItems = cart.reduce((sum, currentVal) => sum + currentVal.quantity, 0);
     return (
         <div>
-            <Navbar/>
+            <Navbar totalItems={totalItems}/>
             <main>
-                <Outlet />
+                <Outlet context={{cart, setCart, addToCart}} />
             </main>
             <Footer/>
         </div>
