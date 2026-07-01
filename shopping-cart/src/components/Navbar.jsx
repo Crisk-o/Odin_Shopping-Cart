@@ -1,5 +1,5 @@
 import {Link} from "react-router";
-export default function Navbar(){
+export default function Navbar({totalItems}){
     return(
         <header>
              <div className="logo-container">
@@ -12,7 +12,7 @@ export default function Navbar(){
                     <li>
                         <div>
                             <div>{}</div>
-                            <Link to="/cart">My Cart</Link>
+                            <Link to="/cart">My Cart<span>{totalItems}</span></Link>
                         </div>
                     </li>
                 </ul>

@@ -1,15 +1,12 @@
 // this will be the cart/checkout page.
 // this will be the shopping page where user adds item to their cart.
-import { Link } from "react-router"
-import Navbar from "./components/Navbar"
-import Footer from "./components/Footer"
+// import { Link } from "react-router"
 import { useState, useEffect } from "react"
 function Cart() {
     const [cartArray, setCartArray] = useState([""]);
 
     return (
         <>
-        <Navbar />
         <body>
             <div className='title-container'>
                 <h1>Your Cart</h1>
@@ -26,10 +23,8 @@ function Cart() {
                 <p>Subtotal: $total USD</p>
                 <p>Taxes and shipping calculated at checkout</p>
                 <button>Check out</button>
-
             </div>
         </body>  
-        <Footer/>
         </>
     )
 }
