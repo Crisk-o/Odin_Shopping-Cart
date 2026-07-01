@@ -1,0 +1,19 @@
+.cart-container{
+  border: 5px solid orange;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+.cart-item-container{
+  display: grid;
+  grid-template-columns: repeat(auto, auto);
+  grid-template-rows: repeat(auto, auto);
+  max-height: 80svh;
+}
+
+.cart-payment-details-container {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 24px;
+}

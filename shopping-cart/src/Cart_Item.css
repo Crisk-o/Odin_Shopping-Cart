@@ -1,0 +1,12 @@
+.cart-item{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 100%;
+}
+.cart-item > div > img {
+    width: 125px;
+}

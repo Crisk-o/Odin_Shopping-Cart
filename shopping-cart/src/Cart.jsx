@@ -2,6 +2,7 @@
 // import { useState } from "react"
 import { useOutletContext } from "react-router";
 import Cart_Item from "./Cart_Item"
+import "./Cart.css"
 function Cart() {
     const {cart, updateCart, totalPrice} = useOutletContext();
 
@@ -13,7 +14,7 @@ function Cart() {
             </div>
             
             <div className="cart-items-container">
-            {cart.map((item => {
+            {cart.length === 0 ? "Your cart is empty!" : cart.map((item => {
                 return (<Cart_Item 
                     key={item.id}
                     item = {item}
@@ -25,10 +26,14 @@ function Cart() {
 
             </div>
             <div className="cart-payment-details-container">
-                <p>Subtotal: ${totalPrice.toFixed(2)} USD</p>
-                <p>Taxes and shipping calculated at checkout</p>
-                <button>Check out</button>
-            </div>
+                <div>
+                    <p>Subtotal: ${totalPrice.toFixed(2)} USD</p>
+                    <p style={{fontSize: "12px", margin: 0}}>*Taxes and shipping calculated at checkout</p>
+                </div>
+                <div>
+                    <button>Check out</button>
+                </div>
+           </div>
         </div>
     )
 }
